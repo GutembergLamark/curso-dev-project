@@ -3,6 +3,7 @@ import database from "infra/database";
 async function cleanDatabase() {
   await database.query("drop schema public cascade; create schema public;")
 }
+
 beforeAll(cleanDatabase)
 
 test("Post to /api/v1/migrations should return 200", async () => {
