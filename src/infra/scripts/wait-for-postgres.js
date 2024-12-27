@@ -6,7 +6,7 @@ function checkPostgres() {
     handleReturn,
   );
 
-  function handleReturn(error, stdout, stderr) {
+  function handleReturn(error, stdout) {
     if (stdout.search("accepting connections") === -1) {
       process.stdout.write(".");
       checkPostgres();
