@@ -28,7 +28,7 @@ async function waitForAllServices() {
 }
 
 const orquestrator = {
-  waitForAllServices
-}
+  waitForAllServices,
+};
 
-export default orquestrator
+export default orquestrator;
