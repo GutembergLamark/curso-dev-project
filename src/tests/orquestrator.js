@@ -12,7 +12,7 @@ async function waitForAllServices() {
       onRetry: (err, i) => console.log(`Retrying ${i} of 100: ${err.message}`),
     });
 
-    async function fetchStatusPage(bail, tryNumber) {
+    async function fetchStatusPage() {
       try {
         const response = await fetch("http://localhost:3000/api/v1/status");
         if (response.status !== 200) {
@@ -27,6 +27,8 @@ async function waitForAllServices() {
   }
 }
 
-export default {
+const orquestrator = {
   waitForAllServices,
 };
+
+export default orquestrator;
