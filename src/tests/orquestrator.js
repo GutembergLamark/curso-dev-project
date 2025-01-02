@@ -21,7 +21,7 @@ async function waitForAllServices() {
           );
         }
       } catch (error) {
-        throw Error();
+        throw new Error(error);
       }
     }
   }
