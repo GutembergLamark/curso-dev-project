@@ -22,4 +22,3 @@ describe("GET /api/v1/status", function () {
     });
   });
 });
-
