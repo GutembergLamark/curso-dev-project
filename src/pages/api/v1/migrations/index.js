@@ -1,6 +1,6 @@
 import database from "infra/database";
 import migrationRunner from "node-pg-migrate";
-import { join } from "node:path";
+import { resolve } from "node:path";
 
 const ALLOWED_METHODS = ["POST", "GET"];
 export default async function migrations(request, response) {
@@ -17,7 +17,7 @@ export default async function migrations(request, response) {
     const defaultMigrationOptions = {
       dbClient,
       dryRun: true,
-      dir: join("src", "infra", "migrations"),
+      dir: resolve("src", "infra", "migrations"),
       direction: "up",
       verbose: true,
       migrationsTable: "pgmigrations",
